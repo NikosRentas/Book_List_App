@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Activity_main layout dimensions-->
+    <dimen name="main_act_parent_marg_left">8dp</dimen>
+    <dimen name="main_act_parent_marg_right">8dp</dimen>
+    <dimen name="main_act_parent_marg_top">8dp</dimen>
+    <dimen name="title_marg_left">8dp</dimen>
+    <dimen name="title_marg_top">8dp</dimen>
+    <dimen name="title_text_size">18sp</dimen>
+    <dimen name="book_image_marg_left">16dp</dimen>
+    <dimen name="book_image_marg_right">16dp</dimen>
+    <dimen name="upside_linear_marg_top">8dp</dimen>
+    <dimen name="author_marg_left">8dp</dimen>
+    <dimen name="author_marg_right">8dp</dimen>
+    <dimen name="date_marg_left">8dp</dimen>
+    <dimen name="lang_marg_left">8dp</dimen>
+    <dimen name="rating_font_size">16sp</dimen>
+    <dimen name="snippet_marg">16dp</dimen>
+    <dimen name="zero_height">0dp</dimen>
+    <dimen name="error_text_view_marg_top">16dp</dimen>
+    <dimen name="error_font_size">32sp</dimen>
+    <dimen name="no_books_font_size">32sp</dimen>
+</resources>

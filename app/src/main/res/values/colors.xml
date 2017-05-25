@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00796b</color>
+    <color name="colorPrimaryDark">#004d40</color>
+    <color name="colorAccent">#009688</color>
+
+    <!-- Rating colors -->
+    <color name="rating_0">#80cbc4</color>
+    <color name="rating_1">#4db6ac</color>
+    <color name="rating_2">#26a69a</color>
+    <color name="rating_3">#009688</color>
+    <color name="rating_4">#00897b</color>
+    <color name="rating_5">#00796b</color>
+</resources>

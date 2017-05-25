@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Book List</string>
+    <string name="search_book_name">Search book name ...</string>
+    <string name="search_button">Search</string>
+    <string name="author_temp">Author</string>
+    <string name="title_temp">TITLE</string>
+    <string name="publish_date">Publish date</string>
+    <string name="lang">language</string>
+    <string name="temp_snippet">Topping macaroon marshmallow sugar plum dragée. Sesame snaps cotton candy chocolate bonbon. Sugar plum halvah marshmallow wafer gingerbread donut lollipop. Marshmallow liquorice halvah. Carrot cake halvah oat cake. Candy tart jelly-o gummi bears chupa chups cookie jelly. Pastry icing dessert pie. Dessert macaroon lemon drops halvah marshmallow. Wafer halvah chocolate muffin macaroon carrot cake candy canes.</string>
+    <string name="no_books">No books</string>
+    <string name="give_book_name">Give book name!!!</string>
+    <string name="en">English</string>
+    <string name="gr">Greek</string>
+    <string name="it">Italian</string>
+    <string name="gre">German</string>
+    <string name="ru">Russian</string>
+    <string name="fr">France</string>
+</resources>

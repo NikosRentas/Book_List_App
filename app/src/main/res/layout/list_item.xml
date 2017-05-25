@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/main_act_parent_marg_right"
+    android:layout_marginLeft="@dimen/main_act_parent_marg_left"
+    android:layout_marginRight="@dimen/main_act_parent_marg_right"
+    android:layout_marginStart="@dimen/main_act_parent_marg_left"
+    android:layout_marginTop="@dimen/main_act_parent_marg_top"
+    android:orientation="vertical">
+
+    <!-- Upside informations -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/upside_linear_marg_top"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <!-- Image of the book-->
+        <ImageView
+            android:id="@+id/book_image_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/book_image_marg_left"
+            android:layout_marginStart="@dimen/book_image_marg_right"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4">
+
+            <!-- Title text view -->
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/title_marg_left"
+                android:layout_marginStart="@dimen/title_marg_left"
+                android:layout_marginTop="@dimen/title_marg_top"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/title_temp"
+                android:textSize="@dimen/title_text_size" />
+
+            <!-- Author text view -->
+            <TextView
+                android:id="@+id/author_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_text_view"
+                android:layout_marginLeft="@dimen/author_marg_left"
+                android:layout_marginStart="@dimen/author_marg_right"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/author_temp" />
+
+            <!-- Date text view -->
+            <TextView
+                android:id="@+id/date_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/author_text_view"
+                android:layout_marginLeft="@dimen/date_marg_left"
+                android:layout_marginStart="@dimen/date_marg_left"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/publish_date" />
+
+            <!-- Language text view -->
+            <TextView
+                android:id="@+id/language_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/date_text_view"
+                android:layout_alignBottom="@+id/date_text_view"
+                android:layout_marginLeft="@dimen/lang_marg_left"
+                android:layout_marginStart="@dimen/lang_marg_left"
+                android:layout_toEndOf="@id/date_text_view"
+                android:layout_toRightOf="@id/date_text_view"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/lang" />
+        </RelativeLayout>
+
+        <!-- Rating text view -->
+        <TextView
+            android:id="@+id/rating_text_view"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.71"
+            android:background="@drawable/circle"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/rating_font_size"
+            tools:text="5.0" />
+    </LinearLayout>
+
+    <!-- Snippet text view -->
+    <TextView
+        android:id="@+id/textSnippet_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/snippet_marg"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="2"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:text="@string/temp_snippet" />
+</LinearLayout>
