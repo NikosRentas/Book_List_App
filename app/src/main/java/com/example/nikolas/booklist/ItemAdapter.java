@@ -24,22 +24,33 @@ public class ItemAdapter extends ArrayAdapter<Item> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        Viewholder viewholder;
+
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
+            viewholder = new Viewholder();
+            viewholder.titleTextView = (TextView) convertView.findViewById(R.id.title_text_view);
+            viewholder.authorTextView =(TextView) convertView.findViewById(R.id.author_text_view);
+            viewholder.dateTextView = (TextView) convertView.findViewById(R.id.date_text_view);
+            viewholder.langTextView =(TextView) convertView.findViewById(R.id.language_text_view);
+            viewholder.snippetTextView =(TextView) convertView.findViewById(R.id.textSnippet_text_view);
+            viewholder.bookImageView = (ImageView) convertView.findViewById(R.id.book_image_view);
+            viewholder.ratingTextView= (TextView) convertView.findViewById(R.id.rating_text_view);
+            convertView.setTag(viewholder);
+        } else {
+            viewholder = (Viewholder) convertView.getTag();
         }
 
         Item currentItem = getItem(position);
 
         // Title text view
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.title_text_view);
-        titleTextView.setText(currentItem.getmTitle());
+        viewholder.titleTextView.setText(currentItem.getmTitle());
 
         // Author text view
-        TextView authorTextView = (TextView) convertView.findViewById(R.id.author_text_view);
         String concatenateAuthors = "";
         if (currentItem.getmAuthorsList().get(0).equals("")) {
-            authorTextView.setText("Author unknow");
+            viewholder.authorTextView.setText("Author unknow");
         } else {
             for (int i = 0; i < currentItem.getmAuthorsList().size(); i++) {
                 if (i > 0 && i < currentItem.getmAuthorsList().size() - 1) {
@@ -48,34 +59,29 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                     concatenateAuthors += currentItem.getmAuthorsList().get(i);
                 }
             }
-            authorTextView.setText(concatenateAuthors);
+            viewholder.authorTextView.setText(concatenateAuthors);
         }
 
         // Date text view
-        TextView dateTextView = (TextView) convertView.findViewById(R.id.date_text_view);
-        dateTextView.setText("Publish date: " + currentItem.getmPublishedDate());
+        viewholder.dateTextView.setText("Publish date: " + currentItem.getmPublishedDate());
 
         // Language text view
-        TextView langTextView = (TextView) convertView.findViewById(R.id.language_text_view);
         int lang = getLanguage(currentItem.getmLanguage());
         if (lang != LANGUAGE_ABBREVIATION) {
-            langTextView.setText(lang);
+            viewholder.langTextView.setText(lang);
         } else {
-            langTextView.setText(currentItem.getmLanguage());
+            viewholder.langTextView.setText(currentItem.getmLanguage());
         }
 
         // Snippet text view
-        TextView snippetTextView = (TextView) convertView.findViewById(R.id.textSnippet_text_view);
-        snippetTextView.setText(currentItem.getmTextSnippet());
+        viewholder.snippetTextView.setText(currentItem.getmTextSnippet());
 
         // Book image view
-        ImageView bookImageView = (ImageView) convertView.findViewById(R.id.book_image_view);
-        bookImageView.setImageResource(R.drawable.notebook);
+        viewholder.bookImageView.setImageResource(R.drawable.notebook);
 
         // Rating text view
-        TextView ratingTextView = (TextView) convertView.findViewById(R.id.rating_text_view);
-        GradientDrawable ratingCircle = (GradientDrawable) ratingTextView.getBackground();
-        ratingTextView.setText(String.valueOf(currentItem.getmAverageRating()));
+        GradientDrawable ratingCircle = (GradientDrawable) viewholder.ratingTextView.getBackground();
+        viewholder.ratingTextView.setText(String.valueOf(currentItem.getmAverageRating()));
         int color = getCircleColor(currentItem.getmAverageRating());
         ratingCircle.setColor(color);
 
@@ -112,13 +118,30 @@ public class ItemAdapter extends ArrayAdapter<Item> {
     }
 
     private int getLanguage(String abbr) {
-        if (abbr.equalsIgnoreCase("en")) { return R.string.en; }
-        else if (abbr.equalsIgnoreCase("gr")) { return R.string.gr; }
-        else if (abbr.equalsIgnoreCase("it")) { return R.string.it; }
-        else if (abbr.equalsIgnoreCase("gre")) { return R.string.gre; }
-        else if (abbr.equalsIgnoreCase("ru")) { return R.string.ru; }
-        else if (abbr.equalsIgnoreCase("fr")) { return R.string.fr; }
+        if (abbr.equalsIgnoreCase("en")) {
+            return R.string.en;
+        } else if (abbr.equalsIgnoreCase("gr")) {
+            return R.string.gr;
+        } else if (abbr.equalsIgnoreCase("it")) {
+            return R.string.it;
+        } else if (abbr.equalsIgnoreCase("gre")) {
+            return R.string.gre;
+        } else if (abbr.equalsIgnoreCase("ru")) {
+            return R.string.ru;
+        } else if (abbr.equalsIgnoreCase("fr")) {
+            return R.string.fr;
+        }
 
         return LANGUAGE_ABBREVIATION;
+    }
+
+    static class Viewholder {
+        private TextView titleTextView;
+        private TextView authorTextView;
+        private TextView dateTextView;
+        private TextView langTextView;
+        private TextView snippetTextView;
+        private ImageView bookImageView;
+        private TextView ratingTextView;
     }
 }
